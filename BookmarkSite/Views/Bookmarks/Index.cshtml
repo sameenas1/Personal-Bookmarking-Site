@@ -1,0 +1,74 @@
+﻿@model IEnumerable<BookmarkSite.Models.Bookmark>
+@{
+    ViewData["Title"] = "My Bookmarks";
+    int currentPage = ViewBag.CurrentPage ?? 1;
+    int totalPages = ViewBag.TotalPages ?? 1;
+}
+
+<div class="bookmarks-container">
+    <div class="header-section">
+        <h2 class="page-title">@ViewData["Title"]</h2>
+
+        <form method="get" class="search-form">
+            <input type="text" name="search" value="@ViewBag.Search" placeholder="Search bookmarks..." class="search-input" />
+            <button type="submit" class="btn btn-outline-light">Search</button>
+        </form>
+
+        <a href="@Url.Action("Create")" class="btn btn-primary add-btn">+ Add Bookmark</a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered bookmark-table">
+            <thead class="table-dark">
+                <tr>
+                    <th>Title</th>
+                    <th>URL</th>
+                    <th>Created At</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Title</td>
+                        <td><a href="@item.Url" target="_blank">@item.Url</a></td>
+                        <td>@item.CreatedAt.ToString("g")</td>
+                        <td>
+                            <a class="btn btn-sm btn-warning" href="@Url.Action("Edit", new { id = item.Id })">Edit</a>
+                            <a class="btn btn-sm btn-danger" href="@Url.Action("Delete", new { id = item.Id })">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="pagination-section">
+        <p>Page <strong>@currentPage</strong> of <strong>@totalPages</strong></p>
+        <nav>
+            <ul class="pagination justify-content-center">
+                @if (currentPage > 1)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="?page=@(currentPage - 1)&search=@ViewBag.Search">Previous</a>
+                    </li>
+                }
+
+                @for (int i = 1; i <= totalPages; i++)
+                {
+                    <li class="page-item @(i == currentPage ? "active" : "")">
+                        <a class="page-link" href="?page=@i&search=@ViewBag.Search">@i</a>
+                    </li>
+                }
+
+                @if (currentPage < totalPages)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="?page=@(currentPage + 1)&search=@ViewBag.Search">Next</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    </div>
+</div>

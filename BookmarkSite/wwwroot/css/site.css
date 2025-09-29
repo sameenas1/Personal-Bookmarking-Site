@@ -1,0 +1,161 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* Full-screen background with external image */
+.landing-page {
+    height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1920&q=80'); /* Unsplash: Bookmarks & workspace theme */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Optional dark overlay for contrast */
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Glassmorphic hero card */
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    max-width: 600px;
+    margin: 0 20px;
+}
+
+/* Typography */
+.hero-title {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    color: #00d4ff;
+    font-weight: 600;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.85;
+}
+
+/* Buttons */
+.btn-cta {
+    margin: 10px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .btn-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    background-color: #1e1e2f;
+    color: #aaa;
+}
+
+.bookmarks-container {
+    padding: 40px;
+    background: linear-gradient(to right, #616166, #636393);
+    color: #fff;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.header-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.search-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.search-input {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+    width: 220px;
+}
+
+.add-btn {
+    margin-top: 10px;
+}
+
+.bookmark-table a {
+    color: #fff;
+    text-decoration: none;
+}
+
+    .bookmark-table a:hover {
+        text-decoration: underline;
+    }
+
+.table th, .table td {
+    vertical-align: middle;
+}
+
+.pagination-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.pagination .page-link {
+    color: #00d4ff;
+    background-color: transparent;
+    border: 1px solid #00d4ff;
+}
+
+.pagination .active .page-link {
+    background-color: #00d4ff;
+    color: #fff;
+    border-color: #00d4ff;
+}
