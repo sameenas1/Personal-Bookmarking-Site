@@ -28,5 +28,5 @@ A minimalist, full-stack .NET web application that allows users to manage their 
 - **Database**: Entity Framework Core (SQL Server)
 - **Authentication**: ASP.NET Identity
 
-## 📂 Project Structure
+
 
